@@ -1,0 +1,34 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "renpy/common/00start.rpy", line 224, in script call
+    call _splashscreen from _call_splashscreen_1
+  File "game/splash.rpy", line 252, in script
+    python:
+  File "game/splash.rpy", line 253, in <module>
+    restore_all_characters()
+  File "game/definitions.rpy", line 29, in restore_all_characters
+    except: open(config.basedir + "/characters/monika.chr", "wb").write(renpy.file("monika.chr").read())
+IOError: [Errno 2] No such file or directory: u'B:\\Hackerman\\Doki\\KWMD\\Klub Wolnych Myslicieli Dokydoky/characters/monika.chr'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "renpy/common/00start.rpy", line 224, in script call
+    call _splashscreen from _call_splashscreen_1
+  File "game/splash.rpy", line 252, in script
+    python:
+  File "B:\Programmmmm\Bie (to su pravi)\renpy-7.2.2-sdk\renpy\ast.py", line 900, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "B:\Programmmmm\Bie (to su pravi)\renpy-7.2.2-sdk\renpy\python.py", line 1930, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/splash.rpy", line 253, in <module>
+    restore_all_characters()
+  File "game/definitions.rpy", line 29, in restore_all_characters
+    except: open(config.basedir + "/characters/monika.chr", "wb").write(renpy.file("monika.chr").read())
+IOError: [Errno 2] No such file or directory: u'B:\\Hackerman\\Doki\\KWMD\\Klub Wolnych Myslicieli Dokydoky/characters/monika.chr'
+
+Windows-8-6.2.9200
+Ren'Py 7.2.2.491
+Doki Doki Literature Club! 1.1.0
+Sun May 19 20:33:51 2019
