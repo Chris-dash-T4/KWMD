@@ -1,6 +1,7 @@
 define persistent.demo = False
 define persistent.steam = False
-define config.developer = False
+define config.developer = True
+#Keep true until release
 
 python early:
     import singleton
@@ -44,9 +45,10 @@ init python:
 
 
 
-
-define audio.t1 = "<loop 22.073>bgm/1.ogg"
+#Music and audio definitions
+define audio.t1 = "<loop 51.402>bgm/1.ogg"#Initally 22.073, changed for placeholder music "Hej Sokoly"
 define audio.t2 = "<loop 4.499>bgm/2.ogg"
+#I assume g for gore? tXg is the corrupt version
 define audio.t2g = "bgm/2g.ogg"
 define audio.t2g2 = "<from 4.499 loop 4.499>bgm/2.ogg"
 define audio.t2g3 = "<loop 4.492>bgm/2g2.ogg"
@@ -73,21 +75,21 @@ define audio.t9g = "<loop 1.532>bgm/9g.ogg"
 define audio.t10 = "<loop 5.861>bgm/10.ogg"
 define audio.t10y = "<loop 0>bgm/10-yuri.ogg"
 define audio.td = "<loop 36.782>bgm/d.ogg"
-
+#Just Monika.webm
 define audio.m1 = "<loop 0>bgm/m1.ogg"
 define audio.mend = "<loop 6.424>bgm/monika-end.ogg"
-
+#The ones that give you nightmares
 define audio.ghostmenu = "<loop 0>bgm/ghostmenu.ogg"
 define audio.g1 = "<loop 0>bgm/g1.ogg"
 define audio.g2 = "<loop 0>bgm/g2.ogg"
 define audio.hb = "<loop 0>bgm/heartbeat.ogg"
-
+#SFX are cool
 define audio.closet_open = "sfx/closet-open.ogg"
 define audio.closet_close = "sfx/closet-close.ogg"
 define audio.page_turn = "sfx/pageflip.ogg"
 define audio.fall = "sfx/fall.ogg"
 
-
+#Background images
 image black = "#000000"
 image dark = "#000000e4"
 image darkred = "#110000c8"
@@ -118,10 +120,10 @@ image bg bedroom = "bg/bedroom.png"
 image bg sayori_bedroom = "bg/sayori_bedroom.png"
 image bg house = "bg/house.png"
 image bg kitchen = "bg/kitchen.png"
-
+#Notebook for poem game
 image bg notebook = "bg/notebook.png"
 image bg notebook-glitch = "bg/notebook-glitch.png"
-
+#Glitchy bois
 image bg glitch = LiveTile("bg/glitch.jpg")
 
 image glitch_color:
@@ -205,8 +207,8 @@ image glitch_color2:
         linear 0.45 alpha 0
 
 
-
-
+#Character images and special effects (aka holy fricc that's a lot of code)
+#No comments for a while have fun
 image sayori 1 = im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "sayori/1r.png", (0, 0), "sayori/a.png")
 image sayori 1a = im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "sayori/1r.png", (0, 0), "sayori/a.png")
 image sayori 1b = im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "sayori/1r.png", (0, 0), "sayori/b.png")
@@ -1276,7 +1278,7 @@ image monika g2:
             pause 0.2
     repeat
 
-
+#Character defs for speaking parts
 define narrator = Character(ctc="ctc", ctc_position="fixed")
 define mc = DynamicCharacter('player', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define s = DynamicCharacter('s_name', image='sayori', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
@@ -1286,7 +1288,7 @@ define y = DynamicCharacter('y_name', image='yuri', what_prefix='"', what_suffix
 define ny = Character('Nat & Yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 
 define _dismiss_pause = config.developer
-
+#Persistent data and defaults
 default persistent.playername = ""
 default player = persistent.playername
 default persistent.playthrough = 0

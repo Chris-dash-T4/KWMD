@@ -12,7 +12,7 @@
 
 
 
-define config.name = "Doki Doki Literature Club!"
+define config.name = "Klub Wolnych Myślicieli Dokydoky!"
 
 
 
@@ -36,7 +36,7 @@ define gui.about = _("")
 
 
 
-define build.name = "DDLC"
+define build.name = "KWMD"
 
 
 
@@ -138,7 +138,7 @@ default preferences.sfx_volume = 0.75
 
 
 
-define config.save_directory = "DDLC-1454445547"
+define config.save_directory = "KWMD-1929445547"
 
 
 
@@ -188,7 +188,7 @@ init python:
 
 
 init python:
-
+    #Oh boy I sure do love  having numerous lines of empty filler
 
 
 
@@ -217,8 +217,8 @@ init python:
     build.classify("game/**.png", "images")
 
     build.classify("game/**.rpyc", "scripts")
-    build.classify("game/**.txt", "scripts")
-    build.classify("game/**.chr", "scripts")
+    build.classify("game/**.txt", "etc")
+    build.classify("game/**.chr", "etc")
     build.classify("game/**.wav", "audio")
     build.classify("game/**.mp3", "audio")
     build.classify("game/**.ogg", "audio")

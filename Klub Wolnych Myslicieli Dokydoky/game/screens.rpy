@@ -1353,7 +1353,7 @@ init -1 style history_label_text:
 
 
 
-
+#Name input
 init -501 screen name_input(message, ok_action):
 
 
@@ -1377,8 +1377,8 @@ init -501 screen name_input(message, ok_action):
             style "confirm_prompt"
             xalign 0.5
 
-        input default "" value VariableInputValue("player") length 12 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-
+        input default "" value VariableInputValue("player") length 12 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÄËÏÖÜÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÑäëïöüáéíóúàèìòùâêîôûñĄĘŃŁÓŻŚĆŹąęńłóżśćźАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя"
+        #Modified to support Polish, German, Russian, and a few other non-ASCII characters
 
 
 
