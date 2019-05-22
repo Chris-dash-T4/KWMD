@@ -1,1 +1,7 @@
 **/orig
+**/*.pdn
+**/*.xcf
+**/*.aup
+**/*_data
+**/log.txt
+**/traceback.txt

@@ -22,6 +22,7 @@ init python:
         for savegame in renpy.list_saved_games(fast=True):
             renpy.unlink_save(savegame)
     def delete_character(name):
+        #TODO change directory to /patients/ and update file names accordingly
         import os
         try: os.remove(config.basedir + "/characters/" + name + ".chr")
         except: pass

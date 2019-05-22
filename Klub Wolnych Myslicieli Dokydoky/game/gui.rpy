@@ -36,11 +36,11 @@ define -2 gui.idle_color = '#aaaaaa'
 define -2 gui.idle_small_color = '#333'
 
 
-define -2 gui.hover_color = '#cc6699'
+define -2 gui.hover_color = '#ff003c' #cc6699
 
 
 
-define -2 gui.selected_color = '#bb5588'
+define -2 gui.selected_color = '#ee002b' #bb5588
 
 
 define -2 gui.insensitive_color = '#aaaaaa7f'
@@ -67,7 +67,7 @@ define -2 gui.name_font = "gui/font/RifficFree-Bold.ttf"
 define -2 gui.interface_font = "gui/font/Aller_Rg.ttf"
 
 
-define -2 gui.text_size = 24
+define -2 gui.text_size = 20
 
 
 define -2 gui.name_text_size = 24
