@@ -16,7 +16,7 @@ gui.rpy
 gui.rpyc
 iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii.txt
 monika.chr
-natsuki.chr
+annikki.chr
 options.rpy
 options.rpyc
 poems.rpy
@@ -24,7 +24,7 @@ poems.rpyc
 poems_special.rpy
 poems_special.rpyc
 poemwords.txt
-sayori.chr
+sarah.chr
 screens.rpy
 screens.rpyc
 script-ch0.rpy

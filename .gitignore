@@ -3,5 +3,5 @@
 **/*.xcf
 **/*.aup
 **/*_data
-**/log.txt
-**/traceback.txt
+Klub\ Wolnych\ Myslicieli\ Dokydoky/*.txt
+!Klub\ Wolnych\ Myslicieli\ Dokydoky/files.txt
