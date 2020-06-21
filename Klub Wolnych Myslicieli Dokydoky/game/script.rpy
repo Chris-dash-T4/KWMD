@@ -2,7 +2,7 @@
 
 
 label start:
-
+    $ player = persistent.playername
 
     $ anticheat = persistent.anticheat
 

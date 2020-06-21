@@ -24,7 +24,7 @@ label ch40_main:
     python:
         if not persistent.monika_back:
             try:
-                renpy.file("../characters/monika.chr")
+                renpy.file("../patients/monika.chr")
                 renpy.call_screen("dialog", message="Please stop playing with my heart.\nI don't want to come back.", ok_action=Return())
                 persistent.monika_back = True
             except:

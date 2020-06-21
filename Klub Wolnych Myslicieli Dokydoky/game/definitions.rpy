@@ -24,17 +24,17 @@ init python:
     def delete_character(name):
         #TODO change directory to /patients/ and update file names accordingly
         import os
-        try: os.remove(config.basedir + "/characters/" + name + ".chr")
+        try: os.remove(config.basedir + "/patients/" + name + ".chr")
         except: pass
     def restore_all_characters():
-        try: renpy.file("../characters/monika.chr")
-        except: open(config.basedir + "/characters/monika.chr", "wb").write(renpy.file("monika.chr").read())
-        try: renpy.file("../characters/natsuki.chr")
-        except: open(config.basedir + "/characters/natsuki.chr", "wb").write(renpy.file("natsuki.chr").read())
-        try: renpy.file("../characters/yuri.chr")
-        except: open(config.basedir + "/characters/yuri.chr", "wb").write(renpy.file("yuri.chr").read())
-        try: renpy.file("../characters/sayori.chr")
-        except: open(config.basedir + "/characters/sayori.chr", "wb").write(renpy.file("sayori.chr").read())
+        try: renpy.file("../patients/monika.chr")
+        except: open(config.basedir + "/patients/monika.chr", "wb").write(renpy.file("monika.chr").read())
+        try: renpy.file("../patients/annikki.chr")
+        except: open(config.basedir + "/patients/annikki.chr", "wb").write(renpy.file("annikki.chr").read())
+        try: renpy.file("../patients/yuri.chr")
+        except: open(config.basedir + "/patients/yuri.chr", "wb").write(renpy.file("yuri.chr").read())
+        try: renpy.file("../patients/sarah.chr")
+        except: open(config.basedir + "/patients/sarah.chr", "wb").write(renpy.file("sarah.chr").read())
     def pause(time=None):
         if not time:
             renpy.ui.saybehavior(afm=" ")
@@ -46,49 +46,47 @@ init python:
 
 
 
-#Music and audio definitions
-define audio.t1 = "<loop 51.402>bgm/1.ogg"#Initally 22.073, changed for placeholder music "Hej Sokoly"
-define audio.t2 = "<loop 4.499>bgm/2.ogg"
-#I assume g for gore? tXg is the corrupt version
-define audio.t2g = "bgm/2g.ogg"
-define audio.t2g2 = "<from 4.499 loop 4.499>bgm/2.ogg"
-define audio.t2g3 = "<loop 4.492>bgm/2g2.ogg"
-define audio.t3 = "<loop 4.618>bgm/3.ogg"
-define audio.t3g = "<to 15.255>bgm/3g.ogg"
-define audio.t3g2 = "<from 15.255 loop 4.618>bgm/3.ogg"
-define audio.t3g3 = "<loop 4.618>bgm/3g2.ogg"
-define audio.t3m = "<loop 4.618>bgm/3.ogg"
-define audio.t4 = "<loop 19.451>bgm/4.ogg"
-define audio.t4g = "<loop 1.000>bgm/4g.ogg"
-define audio.t5 = "<loop 4.444>bgm/5.ogg"
-define audio.t5b = "<loop 4.444>bgm/5.ogg"
-define audio.t5c = "<loop 4.444>bgm/5.ogg"
-define audio.t6 = "<loop 10.893>bgm/6.ogg"
-define audio.t6g = "<loop 10.893>bgm/6g.ogg"
-define audio.t6r = "<to 39.817 loop 0>bgm/6r.ogg"
-define audio.t6s = "<loop 43.572>bgm/6s.ogg"
-define audio.t7 = "<loop 2.291>bgm/7.ogg"
-define audio.t7a = "<loop 4.316 to 12.453>bgm/7.ogg"
-define audio.t7g = "<loop 31.880>bgm/7g.ogg"
-define audio.t8 = "<loop 9.938>bgm/8.ogg"
-define audio.t9 = "<loop 3.172>bgm/9.ogg"
-define audio.t9g = "<loop 1.532>bgm/9g.ogg"
-define audio.t10 = "<loop 5.861>bgm/10.ogg"
-define audio.t10y = "<loop 0>bgm/10-yuri.ogg"
-define audio.td = "<loop 36.782>bgm/d.ogg"
-#Just Monika.webm
-define audio.m1 = "<loop 0>bgm/m1.ogg"
-define audio.mend = "<loop 6.424>bgm/monika-end.ogg"
-#The ones that give you nightmares
-define audio.ghostmenu = "<loop 0>bgm/ghostmenu.ogg"
-define audio.g1 = "<loop 0>bgm/g1.ogg"
-define audio.g2 = "<loop 0>bgm/g2.ogg"
-define audio.hb = "<loop 0>bgm/heartbeat.ogg"
-#SFX are cool
-define audio.closet_open = "sfx/closet-open.ogg"
-define audio.closet_close = "sfx/closet-close.ogg"
-define audio.page_turn = "sfx/pageflip.ogg"
-define audio.fall = "sfx/fall.ogg"
+#Music and audio definitions                                PROTIP: Don't save the game before updating loop times; it saves the old definition rather than loading the new one
+define audio.t1 = "<loop 51.402>bgm/1.ogg"              #Theme Song “Doki Doki Literature Club”, changed to a version of “Hej Sokoły”
+define audio.t2 = "<loop 4.499>bgm/2.ogg"               #“Ohayou Sayori”, replacement TBD
+define audio.t2g = "bgm/2g.ogg"                         #I assume g for glitch? №g.ogg is the corrupt version of №.ogg
+define audio.t2g2 = "<from 4.499 loop 4.499>bgm/2.ogg"  #Ditto
+define audio.t2g3 = "<loop 4.492>bgm/2g2.ogg"           #Ditto
+define audio.t3 = "<loop 48.000>bgm/3.ogg"              #A variation of the title theme, changed to instrumental “Hej Sokoły”
+define audio.t3g = "<to 15.255>bgm/3g.ogg"              #Corrupted form of above
+define audio.t3g2 = "<from 15.255 loop 48.000>bgm/3.ogg"#Ditto
+define audio.t3g3 = "<loop 4.618>bgm/3g2.ogg"           #Ditto
+define audio.t3m = "<loop 48.000>bgm/3.ogg"             #Purpose unkown, likely just for scripting purposes. Same file and loop information as audio.t3
+define audio.t4 = "<loop 19.451>bgm/4.ogg"              #The poem theme, “Dreams of Love and Literature”. Prior replacement was the Комсомол theme; new replacement TBD
+define audio.t4g = "<loop 1.000>bgm/4g.ogg"             #Corrupted form of above
+define audio.t5 = "<loop 4.444>bgm/5.ogg"               #“Okay Everyone!”, or the poem sharing theme. Replacement TBD
+define audio.t5b = "<loop 4.444>bgm/5.ogg"              #Secondary link to above
+define audio.t5c = "<loop 4.444>bgm/5.ogg"              #Ditto
+define audio.t6 = "<loop 10.893>bgm/6.ogg"              #“Play with Me”, #TODO change to “Shostakovich -  Waltz No. 2”
+define audio.t6g = "<loop 10.893>bgm/6g.ogg"            #Above, corrupted
+define audio.t6r = "<to 39.817 loop 0>bgm/6r.ogg"       #Above, reversed
+define audio.t6s = "<loop 43.572>bgm/6s.ogg"            #Above, at 1/4 speed
+#                                                       #6o.ogg must be defined elsewhere, but that's the above edited to sound like it's in another room
+define audio.t7 = "<loop 2.291>bgm/7.ogg"               #“Poem Panic”, replacement TBD
+define audio.t7a = "<loop 4.316 to 12.453>bgm/7.ogg"    #Different loop of above
+define audio.t7g = "<loop 31.880>bgm/7g.ogg"            #Corrupted form of above
+define audio.t8 = "<loop 9.938>bgm/8.ogg"               #“Daijoubu!”, only in Act 1 (?); replacement TBD
+define audio.t9 = "<loop 3.172>bgm/9.ogg"               #“My Feelings”, replacement TBD
+define audio.t9g = "<loop 1.532>bgm/9g.ogg"             #Corrupted form of above
+define audio.t10 = "<loop 5.861>bgm/10.ogg"             #“My Confession”, replacement TBD
+define audio.t10y = "<loop 0>bgm/10-yuri.ogg"           #Corrupted form of above, specifically for Yuri
+define audio.td = "<loop 36.782>bgm/d.ogg"              #“Sayo-nara”, #TODO change to “We'll Meet Again” with a slightly edited intro
+define audio.m1 = "<loop 0>bgm/m1.ogg"                  #“Just Monika”, replacement TBD
+define audio.mend = "<loop 6.424>bgm/monika-end.ogg"    #“I Still Love You”, replacement TBD
+define audio.ghostmenu = "<loop 0>bgm/ghostmenu.ogg"    #Music Disc “11” from Minecraft; replacement may be unneccesary
+define audio.g1 = "<loop 0>bgm/g1.ogg"                  #A triangle wave that causes internal bleeding
+define audio.g2 = "<loop 0>bgm/g2.ogg"                  #A triangle wave that causes slightly less severe internal bleeding
+define audio.hb = "<loop 0>bgm/heartbeat.ogg"           #What it sounds like
+define audio.closet_open = "sfx/closet-open.ogg"        #Closet door opening
+define audio.closet_close = "sfx/closet-close.ogg"      #Closet door closing
+define audio.page_turn = "sfx/pageflip.ogg"             #Paper noise
+define audio.fall = "sfx/fall.ogg"                      #«The Anarchist discovers that nothing she can do will prevent her from obeying the laws of physics”
+#                                                       #There are a lot more sfx defined elsewhere; just go through the folders and you'll find everything
 
 #Background images
 image black = "#000000"
@@ -1318,9 +1316,9 @@ default chapter = 0
 default currentpos = 0
 default faint_effect = None
 
-default s_name = "Sayori"
-default m_name = "Monika"
-default n_name = "Natsuki"
+default s_name = "Sarah"
+default m_name = "Mónika"
+default n_name = "Annikki"
 default y_name = "Yuri"
 
 

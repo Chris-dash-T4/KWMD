@@ -692,11 +692,11 @@ label yuri_kill_3:
     m 2e "I'll make it up to you, okay?"
     m "Just gimme a sec..."
     $ consolehistory = []
-    call updateconsole ("os.remove(\"characters/yuri.chr\")", "yuri.chr deleted successfully.")
+    call updateconsole ("os.remove(\"patients/yuri.chr\")", "yuri.chr deleted successfully.")
     $ delete_character("yuri")
     pause 1.0
-    call updateconsole ("os.remove(\"characters/natsuki.chr\")", "natsuki.chr deleted successfully.")
-    $ delete_character("natsuki")
+    call updateconsole ("os.remove(\"patients/annikki.chr\")", "annikki.chr deleted successfully.")
+    $ delete_character("annikki")
     pause 1.0
     m 2a "I'm almost done."
     m 2j "I just want to have a cupcake real quick!"

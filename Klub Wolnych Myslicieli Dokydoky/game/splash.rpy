@@ -273,20 +273,20 @@ label splashscreen:
     python:
         s_kill_early = None
         if persistent.playthrough == 0:
-            try: renpy.file("../characters/sayori.chr")
+            try: renpy.file("../patients/sarah.chr")
             except: s_kill_early = True
         if not s_kill_early:
             if persistent.playthrough <= 2 and persistent.playthrough != 0:
-                try: renpy.file("../characters/monika.chr")
-                except: open(config.basedir + "/characters/monika.chr", "wb").write(renpy.file("monika.chr").read())
+                try: renpy.file("../patients/monika.chr")
+                except: open(config.basedir + "/patients/monika.chr", "wb").write(renpy.file("monika.chr").read())
             if persistent.playthrough <= 1 or persistent.playthrough == 4:
-                try: renpy.file("../characters/natsuki.chr")
-                except: open(config.basedir + "/characters/natsuki.chr", "wb").write(renpy.file("natsuki.chr").read())
-                try: renpy.file("../characters/yuri.chr")
-                except: open(config.basedir + "/characters/yuri.chr", "wb").write(renpy.file("yuri.chr").read())
+                try: renpy.file("../patients/annikki.chr")
+                except: open(config.basedir + "/patients/annikki.chr", "wb").write(renpy.file("annikki.chr").read())
+                try: renpy.file("../patients/yuri.chr")
+                except: open(config.basedir + "/patients/yuri.chr", "wb").write(renpy.file("yuri.chr").read())
             if persistent.playthrough == 4:
-                try: renpy.file("../characters/sayori.chr")
-                except: open(config.basedir + "/characters/sayori.chr", "wb").write(renpy.file("sayori.chr").read())
+                try: renpy.file("../patients/sayori.chr")
+                except: open(config.basedir + "/patients/sarah.chr", "wb").write(renpy.file("sarah.chr").read())
 
     if not persistent.special_poems:
         python hide:

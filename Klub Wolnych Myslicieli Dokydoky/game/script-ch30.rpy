@@ -103,7 +103,7 @@ init python:
     def slow_nodismiss(event, interact=True, **kwargs):
         if not persistent.monika_kill:
             try:
-                renpy.file("../characters/monika.chr")
+                renpy.file("../patients/monika.chr")
             except:
                 persistent.tried_skip = True
                 config.allow_skipping = False
@@ -555,7 +555,7 @@ label ch30_endb:
     pause 1.5
     m "Please hurry and help me."
     $ consolehistory = []
-    call updateconsole ("renpy.file(\"characters/monika.chr\")", "monika.chr does not exist.")
+    call updateconsole ("renpy.file(\"patients/monika.chr\")", "monika.chr does not exist.")
     m "HELP ME!!!"
     show m_rectstatic
     show m_rectstatic2
@@ -605,8 +605,8 @@ label ch30_endb:
 
 
     pause 3.0
-    call updateconsole ("renpy.file(\"characters/monika.chr\")", "monika.chr does not exist.")
-    call updateconsole ("renpy.file(\"characters/monika.chr\")", "monika.chr does not exist.")
+    call updateconsole ("renpy.file(\"patients/monika.chr\")", "monika.chr does not exist.")
+    call updateconsole ("renpy.file(\"patients/monika.chr\")", "monika.chr does not exist.")
     call hideconsole
     hide noise onlayer front
     hide glitch_color onlayer front
@@ -848,7 +848,7 @@ label ch30_loop:
 label ch30_waitloop:
     python:
         try:
-            renpy.file("../characters/monika.chr")
+            renpy.file("../patients/monika.chr")
         except:
             persistent.tried_skip = True
             config.allow_skipping = False

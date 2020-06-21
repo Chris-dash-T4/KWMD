@@ -1,16 +1,46 @@
 label ch0_main:
     stop music fadeout 2.0
-    scene bg residential_day
+    scene bg bedroom
     with dissolve_scene_full
     play music t2
 
     python:
-        try: renpy.file("../characters/monika.chr")
+        try: renpy.file("../patients/monika.chr")
         except: renpy.jump("ch0_kill")
 
     $ restore_all_characters()
 
+    "..."
+    "I think it's morning."
+    mc "Oh kurwa..."
+    "I feel sore, like usually do after a night of drinking."
+    "This is different though; I know I can't have drinks here."
+    "I suppose it's the bed, seeing as I only came here last night."
+    "I guess I should go to breakfast."
 
+    scene bg residential_day
+    with wipeleft_scene
+    
+    #TODO add description of breakfast cafeteria room or whatever
+    "\[Need to add description of breakfast cafeteria room or whatever\]"
+    s "Hullo [player]!!"
+    "I see a woman running towards me from the other side of the room."
+    "She's waving her arms in the air, oblivious to the attention she's drawing to herself."
+    "Then again, I suppose that's typical of a mental institution."
+    "As she gets closer, I recognize her as Sarah Wilkinson, a British journalist who's lived around Słupdańsk for a couple of years."
+    "She lived just down the street from my apartment, so we saw each other often."
+    "I'd consider us to be pretty good friends, although we haven't talked in a while."
+    "I wonder why she's in here..."
+    $ s_name = "Sarah"
+    show sayori 4p zorder 2 at t11
+    s 4p "Haaahhh...haaahhh..."
+    
+    #TODO Fill this shit in
+
+
+
+
+    #Original script:
     s "Heeeeeeeyyy!!"
     "I see an annoying girl running toward me from the distance, waving her arms in the air like she's totally oblivious to any attention she might draw to herself."
     "That girl is Sayori, my neighbor and good friend since we were children."
@@ -609,8 +639,8 @@ label ch0_kill:
     s "Make it stop!"
     s "PLEASE MAKE IT STOP!"
 
-    $ delete_character("sayori")
-    $ delete_character("natsuki")
+    $ delete_character("sarah")
+    $ delete_character("annikki")
     $ delete_character("yuri")
     $ delete_character("monika")
     $ renpy.quit()

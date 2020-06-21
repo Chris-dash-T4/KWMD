@@ -430,7 +430,12 @@ init -1 python:
         persistent.playername = player
         renpy.hide_screen("name_input")
         renpy.jump_out_of_context("start")
-
+        
+    def UseRandomName():
+        persistent.playername = random.choice(["Piotr","Czesław","Żytomir","Juliusz","Walenty","Lech","Jósef","Tadeusz","Henryk","Ryszard","Krzysztof","Jan","Andrzej","Włodzimierz"])
+        renpy.hide_screen("name_input")
+        renpy.jump_out_of_context("start")
+        
 init -501 screen navigation():
 
     vbox:
@@ -446,9 +451,9 @@ init -501 screen navigation():
             if main_menu:
 
                 if persistent.playthrough == 1:
-                    textbutton _("ŔŗñĮ¼»ŧþŀÂŻŕěōì«") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName)))
+                    textbutton _("ŔŗñĮ¼»ŧþŀÂŻŕěōì«") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName), rand_action=Function(UseRandomName)))
                 else:
-                    textbutton _("New Game") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName)))
+                    textbutton _("New Game") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName), rand_action=Function(UseRandomName)))
 
             else:
 
@@ -796,7 +801,7 @@ init -501 screen load() tag menu:
 init -1 python:
     def FileActionMod(name, page=None, **kwargs):
         if persistent.playthrough == 1 and not persistent.deleted_saves and renpy.current_screen().screen_name[0] == "load" and FileLoadable(name):
-            return Show(screen="dialog", message="File error: \"characters/sayori.chr\"\n\nThe file is missing or corrupt.",
+            return Show(screen="dialog", message="File error: \"patients/sarah.chr\"\n\nThe file is missing or corrupt.",
                 ok_action=Show(screen="dialog", message="The save file is corrupt. Starting a new game.", ok_action=Function(renpy.full_restart, label="start")))
         elif persistent.playthrough == 3 and renpy.current_screen().screen_name[0] == "save":
             return Show(screen="dialog", message="There's no point in saving anymore.\nDon't worry, I'm not going anywhere.", ok_action=Hide("dialog"))
@@ -1354,7 +1359,7 @@ init -1 style history_label_text:
 
 
 #Name input
-init -501 screen name_input(message, ok_action):
+init -501 screen name_input(message, ok_action, rand_action):
 
 
     modal True
@@ -1377,8 +1382,8 @@ init -501 screen name_input(message, ok_action):
             style "confirm_prompt"
             xalign 0.5
 
-        input default "" value VariableInputValue("player") length 12 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÄËÏÖÜÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÑäëïöüáéíóúàèìòùâêîôûñĄĘŃŁÓŻŚĆŹąęńłóżśćźАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя"
-        #Modified to support Polish, German, Russian, and a few other non-ASCII characters
+        input default "" value VariableInputValue("player") length 12 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÄËÏÖÜÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÃÕÑÐäëïöüáéíóúàèìòùâêîôûãõñðßĄĘŃŁÓŻŚĆŹŠČŽŘąęńłóżśćźščžřŐŰőűАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяЁЄІЇЈЉЊЋЂЎёєіїјљњћђў"
+        #Modified to support Polish, German, Russian, Ukrainian, Serbian and other non-ASCII characters
 
 
 
@@ -1389,6 +1394,7 @@ init -501 screen name_input(message, ok_action):
             spacing 100
 
             textbutton _("OK") action ok_action
+            textbutton "Random" action rand_action
 
 init -501 screen dialog(message, ok_action):
 
